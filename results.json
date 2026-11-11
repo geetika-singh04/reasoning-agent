@@ -1,0 +1,490 @@
+{
+ "RuleTaker-train": {
+  "source": "Hugging Face",
+  "pool": 1000,
+  "n": 1000,
+  "kind": "rules",
+  "engines": {
+   "fc": {
+    "accuracy": 98.3,
+    "total_time_s": 0.2604752000188455,
+    "ms_per_query": 0.2604752000188455
+   },
+   "bc": {
+    "accuracy": 98.3,
+    "total_time_s": 0.22974590002559125,
+    "ms_per_query": 0.22974590002559125
+   }
+  },
+  "fc_bc_disagree": 0,
+  "parse": {
+   "sentences": 10267,
+   "unparsed_sentences": 0,
+   "examples_with_unparsed": 0,
+   "unparsed_queries": 0,
+   "samples": []
+  },
+  "errors": [
+   {
+    "context": "Facts:\nThe train plays football.\nThe artist is fluffy.\nThe train plays instruments.\nRules:\nBased on the train plays instruments, it is evident that the cat plays instruments.\nGiven that the train plays instruments, it follows that the mountain is fluffy.\nBased on the artist is fluffy, it is evident that the cat plays instruments.\nGiven that the train plays football, it follows that the mountain plays football.\nIf the train plays instruments, then the artist is fluffy.\nAssuming the train plays instruments, we can say the artist is fast.",
+    "query": "The artist is fast.",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "Facts:\nThe dog makes pizza.\nThe pig is an artist.\nEmma makes pizza.\nRules:\nGiven that emma makes pizza, it follows that the pig cooks well.\nWhen the dog makes pizza, we can conclude the pig is an artist.\nAssuming emma cooks well, we can say the pig is an artist.\nWhen emma makes pizza, we can conclude alice is an artist.\nBased on emma cooks well, it is evident that alice is an artist.",
+    "query": "Alice is an artist.",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "Facts:\nAlice is a chef.\nThe globe plays games.\nStanford University plays games.\nRules:\nBased on stanford university plays games, it is evident that stanford university does yoga.\nIf alice is a chef, then the bridge does yoga.\nBased on the globe plays games, it is evident that the globe is quiet.\nGiven that the globe is quiet, it follows that alice is a chef.\nBased on stanford university does yoga, it is evident that alice is a chef.",
+    "query": "The globe is quiet.",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "Facts:\nThe sandwich paints pictures.\nThe sandwich plays games.\nThe globe paints pictures.\nRules:\nBased on the sandwich plays games, it is evident that the sandwich travels far.\nAssuming the sandwich paints pictures, we can say the sandwich paints pictures.\nIf the sandwich paints pictures, then the sandwich paints pictures.\nBased on the globe paints pictures, it is evident that the globe plays games.\nGiven that the globe paints pictures, it follows that the globe travels far.\nGiven that the sandwich plays games, it follows that lucy travels far.\nWhen the sandwich travels far, we can conclude th",
+    "query": "Lucy travels far.",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "Facts:\nChuan is fluffy.\nHenry is fluffy.\nThe sun is loud.\nRules:\nAssuming henry is fluffy, we can say henry is loud.\nIf henry is fluffy, then henry is a chef.\nIf henry is a chef, then the sun is fluffy.\nIf henry is fluffy, then henry is loud.\nWhen henry is fluffy, we can conclude the sun is a chef.\nIf henry is loud, then the sun is fluffy.",
+    "query": "The sun is a chef.",
+    "gold": false,
+    "pred": true
+   }
+  ],
+  "per_config": {
+   "1": {
+    "n": 196,
+    "accuracy": 100.0
+   },
+   "2": {
+    "n": 406,
+    "accuracy": 96.79802955665025
+   },
+   "3": {
+    "n": 398,
+    "accuracy": 98.99497487437186
+   }
+  }
+ },
+ "RuleTaker-test": {
+  "source": "Hugging Face",
+  "pool": 250,
+  "n": 250,
+  "kind": "rules",
+  "engines": {
+   "fc": {
+    "accuracy": 97.6,
+    "total_time_s": 0.0648197999689728,
+    "ms_per_query": 0.2592791998758912
+   },
+   "bc": {
+    "accuracy": 97.6,
+    "total_time_s": 0.060005899984389544,
+    "ms_per_query": 0.24002359993755817
+   }
+  },
+  "fc_bc_disagree": 0,
+  "parse": {
+   "sentences": 2591,
+   "unparsed_sentences": 0,
+   "examples_with_unparsed": 0,
+   "unparsed_queries": 0,
+   "samples": []
+  },
+  "errors": [
+   {
+    "context": "Facts:\nThe sky fishes in lakes.\nThe sun fishes in lakes.\nCharlie is a chef.\nRules:\nIf the sun fishes in lakes, then the sun plays football.\nBased on the sun fishes in lakes, it is evident that the sun fishes in lakes.\nAssuming the sun fishes in lakes, we can say lucas fishes in lakes.\nBased on lucas fishes in lakes, it is evident that the sun is a chef.\nWhen the sun fishes in lakes, we can conclude lucas teaches math.\nGiven that the sky is a chef, it follows that lucas plays football.\nIf the sun fishes in lakes, then the sky is a chef.",
+    "query": "Lucas teaches math.",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "Facts:\nLiam is a doctor.\nJames reads books.\nLiam is a doctor.\nRules:\nBased on liam is a doctor, it is evident that the plane is a doctor.\nGiven that liam is a doctor, it follows that liam is colorful.\nWhen liam is a doctor, we can conclude liam is colorful.\nAssuming liam is a doctor, we can say the plane reads books.\nWhen liam is colorful, we can conclude liam makes pizza.\nGiven that liam is colorful, it follows that liam is colorful.\nBased on liam is colorful, it is evident that liam is colorful.\nWhen liam reads books, we can conclude liam is colorful.",
+    "query": "Liam makes pizza.",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "Facts:\nThe sky is interesting.\nThe musician is fast.\nLucy is fast.\nRules:\nIf the sky is interesting, then lucy is fast.\nGiven that the musician is fast, it follows that lucy collects stamps.\nGiven that the musician is fast, it follows that lucy collects stamps.\nAssuming the sky is interesting, we can say lucy is fast.\nGiven that lucy is fast, it follows that the sky is fast.\nGiven that the sky is interesting, it follows that the musician collects stamps.\nAssuming lucy collects stamps, we can say lucy jumps high.\nBased on lucy is fast, it is evident that ava is interesting.\nBased on the musicia",
+    "query": "Lucy jumps high.",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "Facts:\nThe stadium swims well.\nThe wall swims well.\nThe wall runs marathons.\nRules:\nGiven that the wall runs marathons, it follows that the wall is an artist.\nWhen the wall runs marathons, we can conclude the wall is an artist.\nWhen the wall runs marathons, we can conclude emma is an artist.\nAssuming emma is an artist, we can say the car plays football.\nBased on emma is an artist, it is evident that the car plays football.\nGiven that the stadium swims well, it follows that the wall is an artist.\nBased on emma is an artist, it is evident that the stadium runs marathons.",
+    "query": "The stadium runs marathons.",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "Facts:\nThe fountain grows plants.\nMike grows plants.\nChuan is blue.\nRules:\nIf chuan is blue, then mike is blue.\nBased on the fountain grows plants, it is evident that chuan enjoys music.\nGiven that mike grows plants, it follows that mike is blue.\nGiven that the chef grows plants, it follows that chuan enjoys music.\nAssuming mike grows plants, we can say mike is happy.\nGiven that the fountain grows plants, it follows that chuan enjoys music.\nIf the chef grows plants, then the fountain is blue.\nIf chuan enjoys music, then the chef grows plants.",
+    "query": "The chef grows plants.",
+    "gold": false,
+    "pred": true
+   }
+  ],
+  "per_config": {
+   "1": {
+    "n": 54,
+    "accuracy": 100.0
+   },
+   "2": {
+    "n": 94,
+    "accuracy": 94.68085106382979
+   },
+   "3": {
+    "n": 102,
+    "accuracy": 99.01960784313725
+   }
+  }
+ },
+ "RuleTaker-ood": {
+  "source": "Hugging Face",
+  "pool": 375,
+  "n": 375,
+  "kind": "rules",
+  "engines": {
+   "fc": {
+    "accuracy": 99.46666666666667,
+    "total_time_s": 0.0938867999939248,
+    "ms_per_query": 0.25036479998379946
+   },
+   "bc": {
+    "accuracy": 99.46666666666667,
+    "total_time_s": 0.08442649990320206,
+    "ms_per_query": 0.22513733307520548
+   }
+  },
+  "fc_bc_disagree": 0,
+  "parse": {
+   "sentences": 3663,
+   "unparsed_sentences": 0,
+   "examples_with_unparsed": 0,
+   "unparsed_queries": 0,
+   "samples": []
+  },
+  "errors": [
+   {
+    "context": "Facts:\nThe mountain hosts parties.\nJack hosts parties.\nJack is happy.\nRules:\nWhen jack hosts parties, we can conclude the mountain is quiet.\nAssuming the car is happy, we can say the mountain is blue.\nBased on jack hosts parties, it is evident that jack is quiet.\nBased on the car hosts parties, it is evident that the car is happy.\nWhen the car is blue, we can conclude the car hosts parties.\nWhen the mountain hosts parties, we can conclude the car is blue.",
+    "query": "Jack is quiet.",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "Facts:\nThe moon is an engineer.\nThe house travels far.\nThe bridge becomes famous.\nRules:\nIf the bridge becomes famous, then the car is an engineer.\nBased on the moon writes stories, it is evident that the car travels far.\nWhen the car becomes famous, we can conclude the moon writes stories.\nBased on the moon is an engineer, it is evident that the car becomes famous.\nWhen the house travels far, we can conclude the house becomes famous.\nBased on the car is an engineer, it is evident that the moon is an engineer.",
+    "query": "The house becomes famous.",
+    "gold": false,
+    "pred": true
+   }
+  ],
+  "per_config": {
+   "4": {
+    "n": 250,
+    "accuracy": 100.0
+   },
+   "5": {
+    "n": 125,
+    "accuracy": 98.4
+   }
+  }
+ },
+ "FOLIO-train": {
+  "source": "Hugging Face",
+  "pool": 1001,
+  "n": 1001,
+  "kind": "fol",
+  "engines": {
+   "auto": {
+    "accuracy": 80.31968031968032,
+    "total_time_s": 74.4414016000228,
+    "ms_per_query": 74.36703456545735
+   }
+  },
+  "fc_bc_disagree": 0,
+  "parse": {
+   "sentences": 6286,
+   "unparsed_sentences": 29,
+   "examples_with_unparsed": 28,
+   "unparsed_queries": 1,
+   "samples": [
+    "Customer(lily) \u2227 In(lily, jameSFamily \u2227 WatchIn(lily, tV, cinema)",
+    "Customer(lily) \u2227 In(lily, jameSFamily \u2227 WatchIn(lily, tV, cinema)",
+    "Customer(lily) \u2227 In(lily, jameSFamily \u2227 WatchIn(lily, tV, cinema)",
+    "Customer(lily) \u2227 In(lily, jameSFamily \u2227 WatchIn(lily, tV, cinema)",
+    "Customer(lily) \u2227 In(lily, jameSFamily \u2227 WatchIn(lily, tV, cinema)",
+    "\u2200x (Athlete(x) \u2192 \u00acNeverExercises(x)) Never: does not exist a time",
+    "\u2200x (Athlete(x) \u2192 \u00acNeverExercises(x)) Never: does not exist a time",
+    "\u2200x (Athlete(x) \u2192 \u00acNeverExercises(x)) Never: does not exist a time"
+   ]
+  },
+  "errors": [
+   {
+    "context": "\u2200x (DrinkRegularly(x, coffee) \u2192 IsDependentOn(x, caffeine))\n\u2200x (DrinkRegularly(x, coffee)  \u2228 (\u00acWantToBeAddictedTo(x, caffeine)))\n\u2200x (\u00acWantToBeAddictedTo(x, caffeine) \u2192 \u00acAwareThatDrug(x, caffeine))\n\u00ac(Student(rina) \u2295  \u00acAwareThatDrug(rina, caffeine))\n\u00ac(IsDependentOn(rina, caffeine) \u2295 Student(rina))",
+    "query": "\u00acWantToBeAddictedTo(rina, caffeine) \u2295 \u00acAwareThatDrug(rina, caffeine)",
+    "gold": true,
+    "pred": false
+   },
+   {
+    "context": "\u2200x (DrinkRegularly(x, coffee) \u2192 IsDependentOn(x, caffeine))\n\u2200x (DrinkRegularly(x, coffee)  \u2228 (\u00acWantToBeAddictedTo(x, caffeine)))\n\u2200x (\u00acWantToBeAddictedTo(x, caffeine) \u2192 \u00acAwareThatDrug(x, caffeine))\n\u00ac(Student(rina) \u2295  \u00acAwareThatDrug(rina, caffeine))\n\u00ac(IsDependentOn(rina, caffeine) \u2295 Student(rina))",
+    "query": "(DoNotWantToBeAddictedToCaffeine(rina) \u2295 \u00acAwareThatDrug(rina, caffeine)) \u2192 \u00ac(\u00acWantToBeAddictedTo(rina, caffeine) \u2227 DrinkRegularly(rina, coffee))",
+    "gold": true,
+    "pred": false
+   },
+   {
+    "context": "Czech(miroslav) \u2227 ChoralConductor(miroslav) \u2227 SpecializeInPerformanceOf(miroslav, renaissanceMusic) \u2227 SpecializeInPerformanceOf(miroslav, baroqueMusic)\n\u2200x (ChoralConductor(x) \u2192 Musician(x))\n\u2203x \u2203y ((Musician(x) \u2192 Love(x, music)) \u2227 (\u00ac(x=y) \u2227 Musician(y) \u2192 Love(y, music)))\nPublishedBook(miroslav, methodOfStudyingGregorianChant, yr1946)",
+    "query": "\u2203x \u2203y (Czech(x) \u2227 PublishedBook(x, y, year1946))",
+    "gold": true,
+    "pred": false
+   },
+   {
+    "context": "Building(blakeMcFallCompanyBuilding) \u2227 AddedToIn(blakeMcFallCompanyBuilding, theNationalRegisterOfHistoricPlaces, year1990)\nBuilding(emmetBuilding) \u2227 Five-Story(emmetBuilding) \u2227 LocatedIn(emmetBuilding, portland) \u2227 LocatedIn(portland, oregon))\nBuiltIn(emmetBuilding, year1915)\nemmetBuiling=blakeMcFallCompanyBuilding\nWorkAt(john, emmetBuilding)",
+    "query": "\u2203x (Building(x) \u2227 Five-Story(x) \u2227 ConstructedIn(x, year1915))",
+    "gold": true,
+    "pred": false
+   },
+   {
+    "context": "Building(blakeMcFallCompanyBuilding) \u2227 AddedToIn(blakeMcFallCompanyBuilding, theNationalRegisterOfHistoricPlaces, year1990)\nBuilding(emmetBuilding) \u2227 Five-Story(emmetBuilding) \u2227 LocatedIn(emmetBuilding, portland) \u2227 LocatedIn(portland, oregon))\nBuiltIn(emmetBuilding, year1915)\nemmetBuiling=blakeMcFallCompanyBuilding\nWorkAt(john, emmetBuilding)",
+    "query": "LocatedIn(blakeMcFallCompanyBuilding, portland)",
+    "gold": true,
+    "pred": false
+   }
+  ],
+  "per_config": {
+   "FOLIO-train": {
+    "n": 1001,
+    "accuracy": 80.31968031968032
+   }
+  }
+ },
+ "FOLIO-validation": {
+  "source": "Hugging Face",
+  "pool": 203,
+  "n": 203,
+  "kind": "fol",
+  "engines": {
+   "auto": {
+    "accuracy": 84.23645320197043,
+    "total_time_s": 32.51996659999713,
+    "ms_per_query": 160.19687980294154
+   }
+  },
+  "fc_bc_disagree": 0,
+  "parse": {
+   "sentences": 1307,
+   "unparsed_sentences": 18,
+   "examples_with_unparsed": 9,
+   "unparsed_queries": 3,
+   "samples": [
+    "\u2200x (ResidentialCollege(x) \u2192 At(x, yale) \u2227 (BenjaminFranklinCollege(x) \u2295 BerkleyCollege(x) \u2295 BranfordCollege(x) \u2295 Davenpo",
+    "\u2200x (ResidentialCollege(x) \u2192 At(x, yale) \u2227 (BenjaminFranklinCollege(x) \u2295 BerkleyCollege(x) \u2295 BranfordCollege(x) \u2295 Davenpo",
+    "\u2200x (ResidentialCollege(x) \u2192 At(x, yale) \u2227 (BenjaminFranklinCollege(x) \u2295 BerkleyCollege(x) \u2295 BranfordCollege(x) \u2295 Davenpo",
+    "\u2200x (Animal(x) \u2227 With(x, backbone) \u2192 ReproduceBy(x, male-and-femaleMating))",
+    "\u2200x (Bee(x) \u2192 \u00acReproduceBy(x, male-and-femaleMating))",
+    "\u2200x (Animal(x) \u2227 With(x, backbone) \u2192 ReproduceBy(x, male-and-femaleMating))",
+    "\u2200x (Bee(x) \u2192 \u00acReproduceBy(x, male-and-femaleMating))",
+    "\u2200x (Animal(x) \u2227 With(x, backbone) \u2192 ReproduceBy(x, male-and-femaleMating))"
+   ]
+  },
+  "errors": [
+   {
+    "context": "\u2200x (InThisClub(x) \u2227 PerformOftenIn(x, schoolTalentShow) \u2192 Attend(x, schoolEvent) \u2227 VeryEngagedWith(x, schoolEvent))\n\u2200x (InThisClub(x) \u2192 PerformOftenIn(x, schoolTalentShow) \u2295 (InActive(x) \u2227 Disinterested(x) \u2227 MemberOf(x, community)))\n\u2200x (InThisClub(x) \u2227 Chaperone(x, highSchoolDance) \u2192 \u00ac(Studen(x) \u2227 AttendSchool(x)))\n\u2200x (InThisClub(x) \u2227 (InActive(x) \u2227 Disinterested(x) \u2227 MemberOf(x, community)) \u2192 Chaperone(x, highSchoolDances))\n\u2200x (InThisClub(x) \u2227 (YoungChildren(x) \u2295 Teenager(x)) \u2227 WishToFurther(x, academicCareer)) \u2192 Studen(x) \u2227 AttendSchool(x))\nInThisClub(bonnie) \u2227 \u00ac((Attend(x, schoolEvent) \u2227 Ve",
+    "query": "\u00ac((YoungChildren(bonnie) \u2295 Teenager(bonnie)) \u2227 WishToFurther(bonnie, academicCareer)) \u2295 Chaperone(bonnie, highSchoolDance)) \u2192 (Studen(x) \u2227 AttendSchool(x)) \u2295 (YoungChildren(bonnie) \u2295 Teenager(bonnie)) \u2227 WishToFurther(bonnie, academicCareer))",
+    "gold": true,
+    "pred": false
+   },
+   {
+    "context": "MusicPiece(symphony9)\n\u2200x (MusicPiece(x) \u2192 \u2203y (Composer(y) \u2227 Write(y, x)))\nWrittenby(symphony9, beethoven)\nPremiered(viennaMusicSociety, symphony9)\nOrchestra(viennaMusicSociety)\nLead(beethoven, viennaMusicSociety)\n\u2200x (Orchestra(x) \u2192 (\u2203y Conductor(y) \u2227 Lead(y, x)))",
+    "query": "Composer(beethoven)",
+    "gold": true,
+    "pred": false
+   },
+   {
+    "context": "\u2200x (Adore(max, x) \u2227 ZahaHadid(x) \u2227 DesignStyle(x) \u2192 InterestingGeometry(x))\n\u2200x (Adore(max, x) \u2227 BrutalistBuilding(x) \u2192 \u00acInterestingGeometry(x))\n\u2200x (Adore(max, x) \u2192 ((ZahaHadid(x) \u2227 DesignStyle(x)) \u2295 (KellyWearstler(x) \u2227 DesignStyle(x)))\n\u2200x (Adore(max, x) \u2227 KellyWearstler(x) \u2227 DesignStyle(x) \u2192 Evocative(x))\n\u2200x (Adore(max, x) \u2227 KellyWearstler(x) \u2227 DesignStyle(x) \u2192 Dreamy(x))\n\u2203x (Adore(max, x) \u2227 Design(x) \u2227 ByMax(x) \u2227 InterestingGeometry(x) \u2192 BrutalistBuilding(x) \u2227 Evocative(x))",
+    "query": "\u2203x (Design(x) \u2227 ByMax(x) \u2227 Evocative(x) \u2227 Dreamy(x))",
+    "gold": true,
+    "pred": false
+   },
+   {
+    "context": "\u2200x (RankedHighlyBy(x, womensTennisAssociation) \u2192 MostActivePlayerIn(x, majorTennis))\n\u2200x (LostTo(x, \u015bwi\u0105tek) \u2227  At(x, rolandGarros2022) \u2192 RankedHighlyBy(x, womensTennisAssociation))\n\u2200x (FemaleTennisPlayer(x) \u2227 At(x, rolandGarros2022) \u2192 LostTo(x, \u015bwi\u0105tek) \u2227  At(x, rolandGarros2022))\n\u2200x (TennisPlayer(x) \u2227 At(x, rolandGarros2022) \u2192 (Female(x) \u2227 TennisPlayer(x)) \u2295 (Male(x) \u2227 TennisPlayer(x))) \n\u2200x (Male(x) \u2227 TennisPlayer(x) \u2227 At(x, rolandGarros2022) \u2192 LostTo(x, \u015bwi\u0105tek) \u2227 At(x, rolandGarros2022))\nRankedHighlyBy(cocoGauff, womensTennisAssociation) \u2228 (LostTo(cocoGauff, \u015bwi\u0105tek) \u2227 LostAt(cocoGauff, rol",
+    "query": "MostActivePlayerIn(cocoGauff, majorTennis)",
+    "gold": true,
+    "pred": false
+   },
+   {
+    "context": "\u2200x (DigitalMedia(x) \u2192 \u00acAnalogMedia(x))\n\u2200x (PrintedText(x) \u2192 AnalogMedia(x))\n\u2200x (StreamingService(x) \u2192 DigitalMedia(x))\n\u2200x (HardcoverBook(x) \u2192 PrintedText(x))\nStreamingService(1984) \u2192 HardcoverBook(1984)",
+    "query": "\u00acStreamingService(y1984)",
+    "gold": true,
+    "pred": false
+   }
+  ],
+  "per_config": {
+   "FOLIO-validation": {
+    "n": 203,
+    "accuracy": 84.23645320197045
+   }
+  }
+ },
+ "CounterBench-alpha": {
+  "source": "Hugging Face",
+  "pool": 1000,
+  "n": 1000,
+  "kind": "scm",
+  "engines": {
+   "auto": {
+    "accuracy": 96.0,
+    "total_time_s": 0.45553610008209944,
+    "ms_per_query": 0.45553610008209944
+   }
+  },
+  "fc_bc_disagree": 0,
+  "parse": {
+   "sentences": 1000,
+   "unparsed_sentences": 0,
+   "examples_with_unparsed": 0,
+   "unparsed_queries": 0,
+   "samples": []
+  },
+  "errors": [
+   {
+    "context": "We know that Ziklo causes Blaf, Blaf causes Trune, Trune or not Blaf causes Vork, Vork causes Sline and Frim, Frim causes Qado, and Qado and Sline together cause Lumbo. We observed Vork",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "We know that Glent causes Razz, Razz causes Pex, Pex or not Razz causes Zurn, Zurn causes Melf and Crip, Crip causes Flen, and Flen and Melf together cause Zlim. We observed Zurn",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "We know that Praf causes Vank, Vank causes Scud, Scud or not Vank causes Wrenk, Wrenk causes Yobb and Glim, Glim causes Spog, and Spog and Yobb together cause Klep. We observed Wrenk",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "We know that Fizo causes Blorn, Blorn causes Plim, Plim or not Blorn causes Quaz, Quaz causes Skul and Triv, Triv causes Yex, and Yex and Skul together cause Jext. We observed Quaz",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "gold": false,
+    "pred": true
+   },
+   {
+    "context": "We know that Nuv causes Splee, Splee causes Blen, Blen or not Splee causes Druk, Druk causes Plog and Skrim, Skrim causes Zimb, and Zimb and Plog together cause Wrox. We observed Druk",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "gold": false,
+    "pred": true
+   }
+  ],
+  "per_config": {
+   "basic": {
+    "n": 250,
+    "accuracy": 100.0
+   },
+   "conditional": {
+    "n": 250,
+    "accuracy": 92.0
+   },
+   "joint": {
+    "n": 250,
+    "accuracy": 96.0
+   },
+   "nested": {
+    "n": 250,
+    "accuracy": 96.0
+   }
+  }
+ },
+ "CounterBench-backdoor": {
+  "source": "Hugging Face",
+  "pool": 200,
+  "n": 200,
+  "kind": "scm",
+  "engines": {
+   "auto": {
+    "accuracy": 90.0,
+    "total_time_s": 0.08680829999502748,
+    "ms_per_query": 0.4340414999751374
+   }
+  },
+  "fc_bc_disagree": 0,
+  "parse": {
+   "sentences": 200,
+   "unparsed_sentences": 0,
+   "examples_with_unparsed": 0,
+   "unparsed_queries": 0,
+   "samples": []
+  },
+  "errors": [
+   {
+    "context": "We know that Blaf causes Ziklo, Blaf and Trune together cause not Vork, Vork causes Sline, and Sline causes Lumbo. Blaf~Bern(0.4). We observed not Vork. ",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "gold": true,
+    "pred": false
+   },
+   {
+    "context": "We know that Razz causes Glent, Razz and Pex together cause not Zurn, Zurn causes Melf, and Melf causes Zlim. Razz~Bern(0.4). We observed not Zurn. ",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "gold": true,
+    "pred": false
+   },
+   {
+    "context": "We know that Vank causes Praf, Vank and Scud together cause not Wrenk, Wrenk causes Yobb, and Yobb causes Klep. Vank~Bern(0.4). We observed not Wrenk. ",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "gold": true,
+    "pred": false
+   },
+   {
+    "context": "We know that Blorn causes Fizo, Blorn and Plim together cause not Quaz, Quaz causes Skul, and Skul causes Jext. Blorn~Bern(0.4). We observed not Quaz. ",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "gold": true,
+    "pred": false
+   },
+   {
+    "context": "We know that Splee causes Nuv, Splee and Blen together cause not Druk, Druk causes Plog, and Plog causes Wrox. Splee~Bern(0.4). We observed not Druk. ",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "gold": true,
+    "pred": false
+   }
+  ],
+  "per_config": {
+   "backdoor": {
+    "n": 200,
+    "accuracy": 90.0
+   }
+  }
+ },
+ "fol_strategies": {
+  "bfs": {
+   "accuracy": 83.2512315270936,
+   "time_s": 41.230130700045265
+  },
+  "dfs": {
+   "accuracy": 84.72906403940887,
+   "time_s": 58.34103499993216
+  },
+  "ucs": {
+   "accuracy": 84.72906403940887,
+   "time_s": 35.2259315000847
+  },
+  "astar": {
+   "accuracy": 84.23645320197045,
+   "time_s": 41.38393380003981
+  }
+ },
+ "difftest": {
+  "cases": 4000,
+  "stratifiable": 3918,
+  "disagree_total": 16,
+  "disagree_stratifiable": 0
+ },
+ "ablation": {
+  "cwa": 97.6,
+  "owa": 97.6
+ }
+}
